@@ -6,7 +6,13 @@ public class Movement : MonoBehaviour
 
     private Vector2 direction;
 
-    private float walkSpeed = 10f;
+    private float walkSpeed = 1f;
+
+    private float rayDistance = 1f;
+
+    public SpriteRenderer sprite;
+
+    public LayerMask layerMask;
 
     private void Awake()
     {
@@ -16,6 +22,10 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         GetMoveInput();
+        if (IsGround() && Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
@@ -31,5 +41,15 @@ public class Movement : MonoBehaviour
     private void Move()
     {
         rigidBody.velocity = new Vector2(direction.x * walkSpeed, rigidBody.velocity.y);
+    }
+
+    private void Jump()
+    {
+        rigidBody.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+    }
+
+    private bool IsGround()
+    {
+        return Physics2D.Raycast(transform.position, -transform.up, rayDistance, layerMask);
     }
 }
