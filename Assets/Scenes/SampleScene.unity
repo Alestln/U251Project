@@ -13772,16 +13772,12 @@ PrefabInstance:
       value: Adventurer
       objectReference: {fileID: 0}
     - target: {fileID: 9086482775147986105, guid: 6b5464cd0a761c146a511acc26a5910e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9086482775147986105, guid: 6b5464cd0a761c146a511acc26a5910e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.34
+      value: -33.09
       objectReference: {fileID: 0}
     - target: {fileID: 9086482775147986105, guid: 6b5464cd0a761c146a511acc26a5910e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: -0.32
       objectReference: {fileID: 0}
     - target: {fileID: 9086482775147986105, guid: 6b5464cd0a761c146a511acc26a5910e, type: 3}
       propertyPath: m_LocalPosition.z
