@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class RepeatingBackground : MonoBehaviour
@@ -53,12 +54,12 @@ public class RepeatingBackground : MonoBehaviour
         if (cameraLeftEdge > centerRightEdge)
         {
             _left.position = _right.position + Vector3.right * _spriteWidth;
-            (_left, _center, _right) = (_right, _left, _center);
+            (_left, _center, _right) = (_center, _right, _left);
         }
         else if(centerRightEdge < centerLeftEdge)
         {
             _right.position = _left.position - Vector3.right * _spriteWidth;
-            (_left, _center, _right) = (_center, _right, _left);
+            (_left, _center, _right) = (_right, _left, _center);
         }
     }
 }
